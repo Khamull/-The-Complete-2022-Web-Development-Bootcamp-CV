@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+let bowl = ["Apples", "Oranges", "Pears"];
+
 
 app.get("/", (req, res) => {
   const today = new Date();
@@ -21,9 +23,10 @@ app.get("/", (req, res) => {
     adv = "it's time to have some fun";
   }
 
-  res.render("solution.ejs", {
+  res.render("index.ejs", {
     dayType: type,
     advice: adv,
+    fruits: bowl
   });
 });
 
