@@ -1,0 +1,17 @@
+{
+  "name": "5.0-capstone-project",
+  "version": "1.0.0",
+  "description": "My Capstone Project Of a Social Network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charles Path",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "middleware": "^1.0.0"
+  }
+}

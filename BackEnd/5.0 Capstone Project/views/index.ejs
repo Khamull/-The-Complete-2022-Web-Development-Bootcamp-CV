@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+  <% if (locals.adjective && locals.noun) { %>
+    <h1>
+      <%= adjective %>
+        <%= noun %>
+    </h1>
+    <% } else { %>
+      <h1>Welcome to the Next Gen Timeline 🤟</h1>
+      <% } %>
+
+
+
+        <form action="/submit" method="POST">
+          <input type="textbox" id="Post Text" alt="Post Text"/>
+          <input type="submit" value="Generate Name">
+        </form>
+        <h3>Here Will Be the Inserted Timelines!</h3>
+
+
+        <%- include("partials/footer.ejs") %>
