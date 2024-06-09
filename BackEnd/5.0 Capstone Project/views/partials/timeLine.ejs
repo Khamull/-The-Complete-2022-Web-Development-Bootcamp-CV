@@ -1,0 +1,27 @@
+<% if (posts.length > 0) { %>
+    <ul class="timeline">
+      <% posts.forEach((post, index) => { 
+        var cache_buster = Date.now() + Math.floor(Math.random() * 1000);
+        %>
+        <li>
+          <div>
+            <p>
+                <img src="https://picsum.photos/300?random=2&cache_buster=<%= cache_buster %>"/>
+            </p>
+            <p style="color: beige;"><%= post.texto %></p>
+            <span><strong><%= post.autor %>
+            <p>
+            <%= post.hora %></strong></span>
+            <form action="/posts/<%= index %>/<%= post.liked ? 'unlike' : 'like' %>" method="POST">
+              <input type="hidden" name="_method" value="PATCH">
+              <button type="submit" class="like-button">
+                <%= post.liked ? 'Unlike' : 'Like' %>
+              </button>
+            </form>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p class="empty-timeline">No posts yet!</p>
+  <% } %>

@@ -3,10 +3,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   color: hotpink;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -22,7 +24,7 @@ h1 {
   font-size: 3.5rem;
 }
 
-input {
+.submit {
   appearance: none;
   -webkit-appearance: none;
   border: 0;
@@ -34,6 +36,34 @@ input {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  margin-top: auto;
+  margin-left: 10px;
 }
+
+textarea, input, .timeline, img, .submit{
+  border-radius: 5px;
+}
+ul {
+  list-style-type: none;
+}
+
+.like-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.like-button.liked {
+  background-color: #2ecc71;
+}
+
+.like-button.liked:before {
+  content: "\f164"; /* Unicode for thumbs-up icon */
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+

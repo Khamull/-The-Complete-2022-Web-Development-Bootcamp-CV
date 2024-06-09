@@ -1,0 +1,21 @@
+<form action="/posts" method="POST">
+    <p>
+      <img src="https://picsum.photos/400/400"/>
+    </p>
+    <p>
+      <label for="texto">Texto:</label>
+    </p>
+    <p>
+      <textarea id="texto" name="texto" required alt="Post Text" rows="10" cols="50"></textarea>
+    </p>
+    <% if (newAuthor) { %>
+      <p>
+        <label for="autor">Autor:</label>
+        <strong><%= newAuthor.first %> <%= newAuthor.last %> - <%= newAuthor.bio %></strong>
+
+        <input type="hidden" name="autor" value="<%= newAuthor.first %> <%= newAuthor.last %> - <%= newAuthor.bio %>">
+      </p>
+    <% } %>
+    <input type="submit" class="submit" value="Send Post">
+  </form>
+  
